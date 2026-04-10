@@ -1,0 +1,22 @@
+[build]
+  # The directory to change to before starting a build.
+  # This is where your package.json and vite.config.ts are.
+  base = "frontend"
+
+  # The command to run to build your project.
+  command = "npm run build"
+
+  # The directory that contains the deploy-ready HTML files and assets.
+  # This is relative to the `base` directory.
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  # This redirect rule ensures that client-side routing (SPAs) 
+  # works correctly by pointing all requests to index.html.
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
